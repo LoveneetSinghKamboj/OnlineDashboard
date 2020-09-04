@@ -10,13 +10,13 @@ Feature: Registration Form Validation
     And user click on register button
     Then user is registered and confirmation page opens saying "Thank You"
     
-   Scenario: User registers with existing Employee ID
+    Scenario: User registers with existing Employee ID
     When user enters an existing employeeID
     And user selects Supervisor dropdown, SLP Track dropdown
     And user click on register button
     Then Error message showing "This employee is already registered !"
-    
-    Scenario: User only enters Employee ID
+
+  Scenario: User only enters Employee ID
     When user enter correct Employee id
     And user click on register button
     Then alert message shows "Please select Supervisor"
@@ -37,6 +37,7 @@ Feature: Registration Form Validation
     And user click on register button
     Then error message "Invalid Employee Id"
     
+
   Scenario: User registers with empty form
     When user click on register button
     Then alert message popup "Please enter valid Employee ID"
@@ -50,7 +51,7 @@ Feature: Registration Form Validation
   Scenario: user registers with empty employee Id
     When user selects Supervisor dropdown, SLP Track dropdown
     And user click on register button
-    Then alert message popup  "Please enter valid Employee ID"
+    Then alert message popup "Please enter valid Employee ID"
 
   Scenario: user registers without choosing supervisior
     When user enters correct employee Id
@@ -63,4 +64,3 @@ Feature: Registration Form Validation
     When user selects supervisor
     And user click on register button
     Then alert box message display "Please select track !"
-    

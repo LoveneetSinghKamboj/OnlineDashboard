@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="260321" started-at="2020-09-04T21:33:23 IST" finished-at="2020-09-04T21:37:43 IST">
+  <suite name="Suite" duration-ms="138109" started-at="2020-09-05T04:03:59 IST" finished-at="2020-09-05T04:06:17 IST">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="260321" started-at="2020-09-04T21:33:23 IST" finished-at="2020-09-04T21:37:43 IST">
+    <test name="Test" duration-ms="138109" started-at="2020-09-05T04:03:59 IST" finished-at="2020-09-05T04:06:17 IST">
       <class name="com.onlineDashboardApplication.testRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="setUpClass" is-config="true" duration-ms="460" started-at="2020-09-04T21:33:23 IST" finished-at="2020-09-04T21:33:23 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="setUpClass" is-config="true" duration-ms="367" started-at="2020-09-05T04:03:59 IST" finished-at="2020-09-05T04:03:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="feature" duration-ms="153572" started-at="2020-09-04T21:33:23 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-04T21:35:57 IST">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="feature" duration-ms="67888" started-at="2020-09-05T04:03:59 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-05T04:05:07 IST">
           <params>
             <param index="0">
               <value>
@@ -29,8 +29,9 @@
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'DESKTOP-FUG8PLT', ip: '192.168.43.206', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:51461}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d9a1f04e5ae3261172ad5803ead6067a]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: fb4bf11fc51c9a1321eed28a98c4b913
+*** Element info: {Using=xpath, value=/html/body/div/h1}]]>
             </message>
             <full-stacktrace>
               <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : This employee is already registered !}
@@ -38,8 +39,9 @@ Session ID: d9a1f04e5ae3261172ad5803ead6067a]]>
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'DESKTOP-FUG8PLT', ip: '192.168.43.206', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:51461}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d9a1f04e5ae3261172ad5803ead6067a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: fb4bf11fc51c9a1321eed28a98c4b913
+*** Element info: {Using=xpath, value=/html/body/div/h1}
 at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -75,38 +77,27 @@ Caused by: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'DESKTOP-FUG8PLT', ip: '192.168.43.206', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:51461}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: d9a1f04e5ae3261172ad5803ead6067a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: fb4bf11fc51c9a1321eed28a98c4b913
+*** Element info: {Using=xpath, value=/html/body/div/h1}
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:438)
-at com.onlineDashboardApplication.stepDefination.Form.afterScenario(Form.java:29)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at cucumber.runtime.Utils$1.call(Utils.java:40)
-at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-at cucumber.runtime.Utils.invoke(Utils.java:34)
-at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
-at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)
-at cucumber.runtime.Runtime.runHooks(Runtime.java:212)
-at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:206)
-at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)
-at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
-... 29 more
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at com.onlineDashboardApplication.stepDefination.Form.user_is_registered_and_confirmation_page_opens_saying(Form.java:66)
+at ✽.Then user is registered and confirmation page opens saying "Thank You"(Registration.feature:11)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="feature" duration-ms="105810" started-at="2020-09-04T21:35:57 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-04T21:37:43 IST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="feature" duration-ms="69687" started-at="2020-09-05T04:05:07 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-05T04:06:17 IST">
           <params>
             <param index="0">
               <value>
@@ -117,7 +108,7 @@ at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.jav
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="tearDownClass" is-config="true" duration-ms="38" started-at="2020-09-04T21:37:43 IST" finished-at="2020-09-04T21:37:43 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e]" name="tearDownClass" is-config="true" duration-ms="10" started-at="2020-09-05T04:06:17 IST" finished-at="2020-09-05T04:06:17 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

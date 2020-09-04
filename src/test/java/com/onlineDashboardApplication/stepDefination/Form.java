@@ -31,16 +31,16 @@ public class Form {
 		 } 
 		
 	  @Given("^user is in the Registration form$")
-		public void user_is_in_the_Registration_form() { 
-		   driver =new ChromeDriver();
-			driver.manage().window().maximize();
-	        driver.get("http://localhost:8080/register"); 
+		public void user_is_in_the_Registration_form() {
+		  driver =new ChromeDriver();
+		  driver.manage().window().maximize();
+		   driver.get("http://localhost:8080/register");
 		  
 		}
 		
 		@When("^user enters correct employee Id$")
 		public void user_enters_correct_employee_Id() {
-			driver.findElement(By.name("empId")).sendKeys("4");
+			driver.findElement(By.name("empId")).sendKeys("1");
 		    
 		}
 		
@@ -62,26 +62,36 @@ public class Form {
 		
 		@Then("^user is registered and confirmation page opens saying \"([^\"]*)\"$")
 		public void user_is_registered_and_confirmation_page_opens_saying(String arg1){
-			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  //Display = driver.findElement(By.xpath("/html/body/div/h1")).getText();
-			   String Display="Thank You!";
-			   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			   String Display = driver.findElement(By.xpath("/html/body/div/h1")).getText();
 			    System.out.println(Display);
-			    Assert.assertEquals("Thank You!",Display);
+			    Assert.assertEquals("Thank You!", Display);
 		}
+		
 		@When("^user enters an existing employeeID$")
 		public void user_enters_an_existing_employeeID() {
 			driver.findElement(By.name("empId")).sendKeys("8");
 		}
+
+
 		
+		
+		
+		
+		
+		@Then("^Error message showing \"([^\"]*)\"$")
 		public void error_message_showing(String value) {
 			WebDriverWait wait = new WebDriverWait(driver, 15);
 			  wait.until(ExpectedConditions.alertIsPresent());
 			String alert1= driver.switchTo().alert().getText();
 			System.out.println(alert1);
 			Assert.assertEquals("This employee is already registered !",alert1);
-			driver.switchTo().alert().accept();
+			 driver.switchTo().alert().accept();
 	}
+
+		
+		
+		
 		
 		@When("^user enter correct Employee id$")
 		public void user_enter_correct_Employee_id() {
@@ -93,23 +103,25 @@ public class Form {
 		public void alert_message_shows(String string) {
 		String	alertMessage= driver.switchTo().alert().getText();
 		Assert.assertEquals("Please select supervisor !",alertMessage);
-		driver.switchTo().alert().accept();
 	    System.out.println("Scenario two is executed successffuly");
+	    driver.switchTo().alert().accept();
 		}
 		
 		@When("^user selects supervisor$")
 		public void user_selects_supervisor(){
 			Select sl1=new Select(driver.findElement(By.id("supervisor")));
 			sl1.selectByVisibleText("S1");
+
 		}
+
 		
-		@Then("^alert message popup  \"([^\"]*)\"$")
+		@Then("^alert message popup \"([^\"]*)\"$")
 		public void alert_message_popup(String arg1)  {
-			driver.manage().timeouts().implicitlyWait(10,  TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			String alertvalue = driver.switchTo().alert().getText();
 			System.out.println(alertvalue);
-			driver.switchTo().alert().accept();
 			Assert.assertEquals("Please enter valid employee Id !", alertvalue);
+			driver.switchTo().alert().accept();
 		}
 		@When("^user selects SLP Track$")
 		public void user_selects_SLP_Track() {		
@@ -122,7 +134,10 @@ public class Form {
 		public void user_enter_invalid_employee_id() {
 			driver.findElement(By.name("empId")).sendKeys("1222");
 		}
-	
+		
+		
+		
+		
 		@Then("^error message \"([^\"]*)\"$")
 		public void error_message(String arg1){
 			WebDriverWait wait = new WebDriverWait(driver, 15);
@@ -136,7 +151,8 @@ public class Form {
 		@When("^user enters characters as employeeID$")
 		public void user_enters_characters_as_employeeID() {
 			driver.findElement(By.name("empId")).sendKeys("slpa");
-				   
+			
+		   
 		}
 		
 		@Then("^alert box message display \"([^\"]*)\"$")
@@ -145,6 +161,8 @@ public class Form {
 			String alertSlp = driver.switchTo().alert().getText();
 			Assert.assertEquals("Please select track !", alertSlp);
 			driver.switchTo().alert().accept();
+		
 		}
+		
 	
 	}
