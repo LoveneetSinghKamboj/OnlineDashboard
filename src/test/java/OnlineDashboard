@@ -5,5 +5,7 @@
     <classes>
       <class name="com.onlineDashboardApplication.testRunner.TestRunner"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+</suite> 
+
+	

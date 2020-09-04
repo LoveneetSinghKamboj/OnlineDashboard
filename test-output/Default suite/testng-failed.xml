@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.onlineDashboardApplication.testRunner.TestRunner">
+      <class name="com.onlineDashboardApplication.stepDefination.NewTest">
         <methods>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.onlineDashboardApplication.testRunner.TestRunner -->
+      </class> <!-- com.onlineDashboardApplication.stepDefination.NewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

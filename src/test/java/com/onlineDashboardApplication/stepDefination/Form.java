@@ -1,98 +1,150 @@
 package com.onlineDashboardApplication.stepDefination;
 
-import cucumber.api.java.en.And;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
+
+
 public class Form {
+		
+		public static WebDriver driver=null;
+		
+		@After("@Registration")
+		public void afterScenario()
+		{
+			if (driver != null) 
+			{
+		      driver.close(); 
+			}  
+		 } 
+		
+	  @Given("^user is in the Registration form$")
+		public void user_is_in_the_Registration_form() { 
+		   driver =new ChromeDriver();
+			driver.manage().window().maximize();
+	        driver.get("http://localhost:8080/register"); 
+		  
+		}
+		
+		@When("^user enters correct employee Id$")
+		public void user_enters_correct_employee_Id() {
+			driver.findElement(By.name("empId")).sendKeys("4");
+		    
+		}
+		
+		@When("^user selects Supervisor dropdown, SLP Track dropdown$")
+		public void user_selects_Supervisor_dropdown_SLP_Track_dropdown() {
+			
+		Select sl1 = new Select(driver.findElement(By.id("supervisor")));
+			sl1.selectByVisibleText("S1");
+			Select sl2=new Select(driver.findElement(By.id("track")));
+			sl2.selectByIndex(1);
+		}
+		
+		@When("^user click on register button$")
+		public void user_click_on_register_button() {
+			
+			driver.findElement(By.xpath("//*[@id=\"registration-box\"]/div/input")).click();
+			
+		}
+		
+		@Then("^user is registered and confirmation page opens saying \"([^\"]*)\"$")
+		public void user_is_registered_and_confirmation_page_opens_saying(String arg1){
+			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  //Display = driver.findElement(By.xpath("/html/body/div/h1")).getText();
+			   String Display="Thank You!";
+			   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			    System.out.println(Display);
+			    Assert.assertEquals("Thank You!",Display);
+		}
+		@When("^user enters an existing employeeID$")
+		public void user_enters_an_existing_employeeID() {
+			driver.findElement(By.name("empId")).sendKeys("8");
+		}
+		
+		public void error_message_showing(String value) {
+			WebDriverWait wait = new WebDriverWait(driver, 15);
+			  wait.until(ExpectedConditions.alertIsPresent());
+			String alert1= driver.switchTo().alert().getText();
+			System.out.println(alert1);
+			Assert.assertEquals("This employee is already registered !",alert1);
+			driver.switchTo().alert().accept();
+	}
+		
+		@When("^user enter correct Employee id$")
+		public void user_enter_correct_Employee_id() {
+			driver.findElement(By.id("empId")).sendKeys("2");
 
-    @Given("^user is in the form page$")
-    public void user_is_in_the_form_page() throws Throwable 
-    {
-    
-    	System.out.println("Hello");
-    }
+		}
+		
+		@Then("^alert message shows \"([^\"]*)\"$")
+		public void alert_message_shows(String string) {
+		String	alertMessage= driver.switchTo().alert().getText();
+		Assert.assertEquals("Please select supervisor !",alertMessage);
+		driver.switchTo().alert().accept();
+	    System.out.println("Scenario two is executed successffuly");
+		}
+		
+		@When("^user selects supervisor$")
+		public void user_selects_supervisor(){
+			Select sl1=new Select(driver.findElement(By.id("supervisor")));
+			sl1.selectByVisibleText("S1");
+		}
+		
+		@Then("^alert message popup  \"([^\"]*)\"$")
+		public void alert_message_popup(String arg1)  {
+			driver.manage().timeouts().implicitlyWait(10,  TimeUnit.SECONDS);
+			String alertvalue = driver.switchTo().alert().getText();
+			System.out.println(alertvalue);
+			driver.switchTo().alert().accept();
+			Assert.assertEquals("Please enter valid employee Id !", alertvalue);
+		}
+		@When("^user selects SLP Track$")
+		public void user_selects_SLP_Track() {		
+			Select sl1=new Select(driver.findElement(By.id("track")));
+			sl1.selectByIndex(2);
+		    
+		}
+		
+		@When("^user enter invalid employee id$")
+		public void user_enter_invalid_employee_id() {
+			driver.findElement(By.name("empId")).sendKeys("1222");
+		}
+	
+		@Then("^error message \"([^\"]*)\"$")
+		public void error_message(String arg1){
+			WebDriverWait wait = new WebDriverWait(driver, 15);
+			  wait.until(ExpectedConditions.alertIsPresent());
 
-    @When("^user enters correct employeeID $")
-    public void user_enters_correct_employeeid() throws Throwable {
-       
-    }
+			String alertvalue = driver.switchTo().alert().getText();		
+			Assert.assertEquals("Invalid employee Id !", alertvalue);
+			driver.switchTo().alert().accept();
+		}
 
-    @When("^user enter invalid employeeID$")
-    public void user_enter_invalid_employeeid() throws Throwable {
-        
-    }
-
-    @When("^user enters employee id$")
-    public void user_enters_employee_id() throws Throwable {
-
-    }
-
-    @When("^user enter correct Employee id,$")
-    public void user_enter_correct_employee_id() throws Throwable {
-    
-    }
-
-    @Then("^form is submitted and confirmation page opens$")
-    public void form_is_submitted_and_confirmation_page_opens() throws Throwable {
-       
-    }
-
-    @Then("^error message \"([^\"]*)\" is shown$")
-    public void error_message_something_is_shown(String strArg1) throws Throwable {
-       
-    }
-
-    @Then("^all Supervisor Name will shown$")
-    public void all_supervisor_name_will_shown() throws Throwable {
-     
-    }
-
-    @Then("^show all fields are mandatory$")
-    public void show_all_fields_are_mandatory() throws Throwable {
-      
-    }
-
-    @Then("^Multiselect dropdown according to SLP$")
-    public void multiselect_dropdown_according_to_slp() throws Throwable {
-       
-    }
-
-    @Then("^Multiselect dropdown is empty$")
-    public void multiselect_dropdown_is_empty() throws Throwable {
-    
-    }
-
-    @And("^user selects Supervisor dropdown, slp dropdown, multiselect dropdown$")
-    public void user_selects_supervisor_dropdown_slp_dropdown_multiselect_dropdown() throws Throwable {
-      
-    }
-
-    @And("^user click on Submit button$")
-    public void user_click_on_submit_button() throws Throwable {
-       
-    }
-
-    @And("^user selects correct Supervisor, slp dropdown, multiselect dropdown$")
-    public void user_selects_correct_supervisor_slp_dropdown_multiselect_dropdown() throws Throwable {
-        
-    }
-
-    @And("^user click on Supervisor dropdown$")
-    public void user_click_on_supervisor_dropdown() throws Throwable {
-        
-    }
-
-    @And("^user selects Supervisor dropdown,SLP Trackdown$")
-    public void user_selects_supervisor_dropdownslp_trackdown() throws Throwable {
-  
-    }
-
-    @And("^user selects the Multiselect dropdown $")
-    public void user_selects_the_multiselect_dropdown() throws Throwable {
-
-    }
-
-}
+		@When("^user enters characters as employeeID$")
+		public void user_enters_characters_as_employeeID() {
+			driver.findElement(By.name("empId")).sendKeys("slpa");
+				   
+		}
+		
+		@Then("^alert box message display \"([^\"]*)\"$")
+		public void alert_box_message_display(String arg1){
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			String alertSlp = driver.switchTo().alert().getText();
+			Assert.assertEquals("Please select track !", alertSlp);
+			driver.switchTo().alert().accept();
+		}
+	
+	}
