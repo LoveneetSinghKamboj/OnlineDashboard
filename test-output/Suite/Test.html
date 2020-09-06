@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Sep 05 04:03:59 IST 2020</td>
+<td>Started on:</td><td>Sun Sep 06 03:38:33 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>138 seconds (138109 ms)</td>
+<tr><td>Total time:</td><td>555 seconds (555848 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,47 +76,20 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.onlineDashboardApplication.testRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.onlineDashboardApplication.testRunner.TestRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Registration Form Validation</td>
-<td><div><pre>cucumber.runtime.CucumberException: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : This employee is already registered !}
-  (Session info: chrome=85.0.4183.83): This employee is already registered !
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DESKTOP-FUG8PLT&apos;, ip: &apos;192.168.43.206&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: fb4bf11fc51c9a1321eed28a98c4b913
-*** Element info: {Using=xpath, value=/html/body/div/h1}
+<td><div><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+	at com.onlineDashboardApplication.testRunner.TestRunner.feature(TestRunner.java:44)
 	at java.util.ArrayList.forEach(Unknown Source)
-Caused by: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : This employee is already registered !}
-  (Session info: chrome=85.0.4183.83): This employee is already registered !
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DESKTOP-FUG8PLT&apos;, ip: &apos;192.168.43.206&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: fb4bf11fc51c9a1321eed28a98c4b913
-*** Element info: {Using=xpath, value=/html/body/div/h1}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at com.onlineDashboardApplication.stepDefination.Form.user_is_registered_and_confirmation_page_opens_saying(Form.java:66)
+Caused by: java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy20.getText(Unknown Source)
+	at com.onlineDashboardApplication.pom.pages.Registration.message_Display(Registration.java:49)
+	at com.onlineDashboardApplication.stepDefination.TestRegistration.user_is_registered_and_confirmation_page_opens_saying(TestRegistration.java:62)
 	at ?.Then user is registered and confirmation page opens saying &quot;Thank You&quot;(Registration.feature:11)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1565647145", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1565647145'><pre>cucumber.runtime.CucumberException: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : This employee is already registered !}
-  (Session info: chrome=85.0.4183.83): This employee is already registered !
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DESKTOP-FUG8PLT&apos;, ip: &apos;192.168.43.206&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: fb4bf11fc51c9a1321eed28a98c4b913
-*** Element info: {Using=xpath, value=/html/body/div/h1}
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace424106351", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace424106351'><pre>cucumber.runtime.CucumberException: java.lang.NullPointerException
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+	at com.onlineDashboardApplication.testRunner.TestRunner.feature(TestRunner.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -145,28 +118,19 @@ Session ID: fb4bf11fc51c9a1321eed28a98c4b913
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : This employee is already registered !}
-  (Session info: chrome=85.0.4183.83): This employee is already registered !
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DESKTOP-FUG8PLT&apos;, ip: &apos;192.168.43.206&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.38 (9047dbc2c693f..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: fb4bf11fc51c9a1321eed28a98c4b913
-*** Element info: {Using=xpath, value=/html/body/div/h1}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at com.onlineDashboardApplication.stepDefination.Form.user_is_registered_and_confirmation_page_opens_saying(Form.java:66)
+Caused by: java.lang.NullPointerException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy20.getText(Unknown Source)
+	at com.onlineDashboardApplication.pom.pages.Registration.message_Display(Registration.java:49)
+	at com.onlineDashboardApplication.stepDefination.TestRegistration.user_is_registered_and_confirmation_page_opens_saying(TestRegistration.java:62)
 	at ?.Then user is registered and confirmation page opens saying &quot;Thank You&quot;(Registration.feature:11)
 </pre></div></td>
-<td>67</td>
-<td>com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e</td></tr>
+<td>222</td>
+<td>com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -178,8 +142,8 @@ Session ID: fb4bf11fc51c9a1321eed28a98c4b913
 <tr>
 <td title='com.onlineDashboardApplication.testRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.onlineDashboardApplication.testRunner.TestRunner<br>Test method: Runs Cucumber Feature<br>Parameters: SLP Status</td>
 <td></td>
-<td>69</td>
-<td>com.onlineDashboardApplication.testRunner.TestRunner@71bbf57e</td></tr>
+<td>331</td>
+<td>com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542</td></tr>
 </table><p>
 </body>
 </html>

@@ -1,18 +1,11 @@
 package com.onlineDashboardApplication.pom.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class SLPTracking 
-{
-	private WebDriver driver;
-
-	  public SLPTracking(WebDriver driver) {
-	    this.driver = driver;
-	  }
-	
+{	
 	  @FindBy(how = How.XPATH, using ="//h3[@class='text-center text-info']")
 	  public WebElement Slp_status_text;
 	  
