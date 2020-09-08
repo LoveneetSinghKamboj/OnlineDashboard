@@ -46,7 +46,7 @@ public class TestSlpTracking {
 public void user_enter_incorrect_employee_id() throws InterruptedException {
 	
 	HighElement.highlightElement(SlpTrack.empId);
-	SlpTrack.empId("16");
+	SlpTrack.empId("1733");
 }
 
 @Then("^Pop up box appears, Invalid Employee id$")
@@ -64,7 +64,7 @@ public void user_enters_valid_employee_id() throws InterruptedException {
 	//driver.navigate().refresh();
 	Thread.sleep(1000);
 	HighElement.highlightElement(SlpTrack.empId);
-	SlpTrack.empId("12");
+	SlpTrack.empId("13");
 }
 
 @And("^user click check status button$")
@@ -76,8 +76,7 @@ public void user_checks_status() {
 @Then("^message will be shown Thank you for the update$")
 public void message_will_be_shown_Thank_you_for_the_update() throws InterruptedException {
 	Thread.sleep(500);
-	Assert.assertEquals("Thank You!",SlpTrack.ThanksMessage());
-	//driver.navigate().back();
+	Assert.assertEquals("Thank You",SlpTrack.ThanksMessage());
 }
 
 @And("^user selects course dropdown$")
@@ -93,28 +92,28 @@ public void user_selects_course_dropdown() throws InterruptedException {
         {
         	if(course_Text.equals("Selenium"))
         	{	
-        	  if(element.getText().equals("selenium_subCourse3"))
+        	  if(element.getText().equals("Locating Elements By Name"))
         	   {
         		  element.click();	
         	   }
         	}
         	if(course_Text.equals("API"))
         	{
-        		if(element.getText().equals("api_subCourse1"))
+        		if(element.getText().equals("HTTP Methods - CRUD"))
 	        	   {
 	        		  element.click();	
 	        	   }
         	}
         	if(course_Text.equals("Appium"))
         	{
-        		if(element.getText().equals("appium_subCourse1"))
+        		if(element.getText().equals("Mobile app inspect element"))
 	        	   {
 	        		  element.click();	
 	        	   }
         	}
         	if(course_Text.equals("Tosca"))
         	{
-        		if(element.getText().equals("tosca_subCourse1"))
+        		if(element.getText().equals("Parent Control; Dynamic ID and Dynamic Comparison"))
 	        	   {
 	        		  element.click();	
 	        	   }
@@ -146,7 +145,7 @@ public void user_selects_course_dropdown() throws InterruptedException {
 		for (WebElement element : allElements2) {
 			String abc = element.getAttribute("aria-selected");
 			if (!abc.equals("true")) {
-				if (element.getText().equals("cucumber_subCource2")) {
+				if (element.getText().equals("Junit Test Runner Class")) {
 					Thread.sleep(500);
 					element.click();
 				}
@@ -199,7 +198,7 @@ public void user_check_priviously_updated_courses_are_checked() throws Interrupt
       {
     	 if(course_Text.equals("Selenium"))
     	 {
-    		 if(element.getText().equals("selenium_subCourse3"))
+    		 if(element.getText().equals("Locating Elements By Name"))
 	    	    {
 	              String abc=element.getAttribute("aria-selected");
 	              Assert.assertEquals("true",abc);
@@ -207,7 +206,7 @@ public void user_check_priviously_updated_courses_are_checked() throws Interrupt
     	 }
     	 if(course_Text.equals("API"))
     	 {
-    	   if(element.getText().equals("api_subCourse1"))
+    	   if(element.getText().equals("HTTP Methods - CRUD"))
     	    {
               String abc=element.getAttribute("aria-selected");
               Assert.assertEquals("true",abc);
@@ -215,7 +214,7 @@ public void user_check_priviously_updated_courses_are_checked() throws Interrupt
     	 }
     	 if(course_Text.equals("Appium"))
     	 {
-    	   if(element.getText().equals("appium_subCourse1"))
+    	   if(element.getText().equals("Mobile app inspect element"))
     	    {
               String abc=element.getAttribute("aria-selected");
               Assert.assertEquals("true",abc);
@@ -223,7 +222,7 @@ public void user_check_priviously_updated_courses_are_checked() throws Interrupt
     	 }
     	 if(course_Text.equals("Tosca"))
     	 {
-    	   if(element.getText().equals("tosca_subCourse1"))
+    	   if(element.getText().equals("Parent Control; Dynamic ID and Dynamic Comparison"))
     	    {
               String abc=element.getAttribute("aria-selected");
               Assert.assertEquals("true",abc);
@@ -251,7 +250,7 @@ public void user_check_priviously_updated_courses_are_checked() throws Interrupt
 	List<WebElement> allElements3 = driver.findElements(By.tagName("a"));
      for(WebElement element: allElements3)
       {
-    	 if(element.getText().equals("cucumber_subCource2"))
+    	 if(element.getText().equals("Junit Test Runner Class"))
     	 {
             String abc=element.getAttribute("aria-selected");
             Assert.assertEquals("true",abc);
@@ -289,7 +288,7 @@ public void user_update_one_course() throws InterruptedException {
 @Then("^user check corrrect supervisor is populated$")
 public void user_check_corrrect_supervisor_is_populated() throws InterruptedException {
 	Thread.sleep(500);
-	Assert.assertEquals("S1",SlpTrack.Supervisor_name());
+	Assert.assertEquals("Sujay Rahane",SlpTrack.Supervisor_name());
 }
 
  @Then("^Check User cannot change Supervisor or SLP Track$")

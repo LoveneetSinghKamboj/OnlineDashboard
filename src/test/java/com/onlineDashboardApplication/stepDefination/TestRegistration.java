@@ -42,13 +42,13 @@ public class TestRegistration {
 		
 		@When("^user enters correct employee Id$")
 		public void user_enters_correct_employee_Id() {
-			registration.employee_Id("1"); 
+			registration.employee_Id("13"); 
 		}
 		
 		@When("^user selects Supervisor dropdown, SLP Track dropdown$")
 		public void user_selects_Supervisor_dropdown_SLP_Track_dropdown() {
-			registration.supervisor_Dropdown("S1");
-			registration.slp_Track_Dropdown(1);
+			registration.supervisor_Dropdown("Sujay Rahane");
+			registration.slp_Track_Dropdown(2);
 		}
 		
 		@When("^user click on register button$")
@@ -61,7 +61,7 @@ public class TestRegistration {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			String Display = registration.message_Display();
 			System.out.println(Display);
-			Assert.assertEquals("Thank You!", Display);
+			Assert.assertEquals("Thank You", Display);
 		}
 		
 		@When("^user enters an existing employeeID$")
@@ -100,7 +100,7 @@ public class TestRegistration {
 		
 		@When("^user selects supervisor$")
 		public void user_selects_supervisor(){
-			registration.supervisor_Dropdown("S1");
+			registration.supervisor_Dropdown("Sujay Rahane");
 		}
 
 		

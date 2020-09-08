@@ -1,0 +1,1950 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ToolsQA - Cucumber Framework</title>
+
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ToolsQA - Cucumber Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sep 9, 2020 12:25:06 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Registration</a></li>
+					<li><a href='#'>@SLp</a></li>
+					<li><a href='#'>@Dashboard</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>31</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>147</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Registration Form Validation</span>
+						<span class='test-time'>Sep 9, 2020 12:25:06 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 20s+492ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User inputs valid data and Registers</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters correct employee Id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects Supervisor dropdown, SLP Track dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user is registered and confirmation page opens saying "Thank You"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='8' status='pass'>
+	<span class='duration right label'>0h 0m 11s+888ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User registers with existing Employee ID</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='9' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters an existing employeeID</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='11' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects Supervisor dropdown, SLP Track dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='12' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='13' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Error message showing "This employee is already registered !"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='14' status='pass'>
+	<span class='duration right label'>0h 0m 12s+761ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User only enters Employee ID</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='15' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enter correct Employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message shows "Please select Supervisor"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='19' status='pass'>
+	<span class='duration right label'>0h 0m 6s+843ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User only selects Supervisor</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='20' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects supervisor</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='22' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='23' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message popup "Please enter valid Employee ID"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='24' status='pass'>
+	<span class='duration right label'>0h 0m 6s+636ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User only selects SLP Track</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='25' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects SLP Track</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message popup "Please enter valid Employee ID"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='29' status='pass'>
+	<span class='duration right label'>0h 0m 8s+163ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User enters invalid EmployeeID</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='30' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='31' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enter invalid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='32' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects Supervisor dropdown, SLP Track dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='33' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='34' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then error message "Invalid Employee Id"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='35' status='pass'>
+	<span class='duration right label'>0h 0m 7s+861ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User registers with empty form</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='36' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='37' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='38' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message popup "Please enter valid Employee ID"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='39' status='pass'>
+	<span class='duration right label'>0h 0m 6s+945ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User enters characters in Employee ID field</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='40' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='41' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters characters as employeeID</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='42' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects Supervisor dropdown, SLP Track dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='43' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='44' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message popup "Please enter valid Employee ID"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='45' status='pass'>
+	<span class='duration right label'>0h 0m 8s+32ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user registers with empty employee Id</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='46' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='47' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects Supervisor dropdown, SLP Track dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='48' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='49' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message popup "Please enter valid Employee ID"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='50' status='pass'>
+	<span class='duration right label'>0h 0m 13s+509ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user registers without choosing supervisior</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='51' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='52' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters correct employee Id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='53' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects SLP Track</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='54' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='55' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert message shows "Please select Supervisor"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='56' status='pass'>
+	<span class='duration right label'>0h 0m 7s+204ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user registers without choosing slp Track</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='57' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in the Registration form</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='58' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters correct employee Id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='59' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user selects supervisor</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='60' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on register button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='61' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then alert box message display "Please select track !"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='62'>
+					<div class='test-heading'>
+						<span class='test-name'>SLP Status</span>
+						<span class='test-time'>Sep 9, 2020 12:27:10 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='63' status='pass'>
+	<span class='duration right label'>0h 0m 9s+660ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user enters invalid employee id and checks status</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='64' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='65' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enter incorrect employee Id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='66' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='67' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Pop up box appears, Invalid Employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='68' status='pass'>
+	<span class='duration right label'>0h 0m 7s+74ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user checks Supervisor</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='69' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='70' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='71' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='72' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user check corrrect supervisor is populated</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='73' status='pass'>
+	<span class='duration right label'>0h 0m 7s+694ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user cannot change Supervisor and SLP Track</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='74' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='75' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='76' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='77' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Check User cannot change Supervisor or SLP Track</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='78' status='pass'>
+	<span class='duration right label'>0h 0m 7s+97ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">All DropDown are based on SLP Track</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='79' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='80' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='81' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='82' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Courses Dropdown are based on SLP Track</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='83' status='pass'>
+	<span class='duration right label'>0h 0m 8s+108ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user checks status</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='84' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='85' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='86' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='87' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user will be displayed with employee id,supervisor,slp track,selenium dropdown,java dropdown,cucumber dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='88' status='pass'>
+	<span class='duration right label'>0h 0m 18s+858ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user enters valid employee id and checks status</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='89' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='90' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='91' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='92' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user selects course dropdown</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='93' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click updates button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='94' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then message will be shown Thank you for the update</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='95' status='pass'>
+	<span class='duration right label'>0h 0m 12s+676ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user check course updated successfully</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='96' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='97' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='98' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='99' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user check priviously updated courses are checked</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='100' status='pass'>
+	<span class='duration right label'>0h 0m 11s+271ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">user select only one course to update</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='101' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is on the SLP status tracking page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='102' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enters valid employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='103' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click check status button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='104' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user update one course</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='105' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click updates button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='106' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then message will be shown Thank you for the update</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='107'>
+					<div class='test-heading'>
+						<span class='test-name'>Dashboard</span>
+						<span class='test-time'>Sep 9, 2020 12:28:43 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='108' status='pass'>
+	<span class='duration right label'>0h 0m 31s+610ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin logins into dashboard</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='109' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='110' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='111' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='112' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Admin should be logged in into the dashboard</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='113' status='pass'>
+	<span class='duration right label'>0h 0m 11s+66ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin logins into dashboard with invalid credentials</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='114' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='115' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters invalid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='116' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='117' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then message will be displayed Invalid credentials</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='118' status='pass'>
+	<span class='duration right label'>0h 0m 14s+880ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by employee id</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='119' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='120' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='121' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='122' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for employee id  in search employee id bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='123' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that employee id</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='124' status='pass'>
+	<span class='duration right label'>0h 0m 20s+256ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by employee name</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='125' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='126' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='127' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='128' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for employee name  in search employee name bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='129' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that employee name</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='130' status='pass'>
+	<span class='duration right label'>0h 0m 24s+911ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by registration date</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='131' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='132' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='133' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='134' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for registration date  in search registration date bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='135' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that registration date</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='136' status='pass'>
+	<span class='duration right label'>0h 0m 22s+849ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by superviser name</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='137' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='138' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='139' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='140' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for superviser name in search supervisor name bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='141' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that superviser name</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='142' status='pass'>
+	<span class='duration right label'>0h 0m 19s+769ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by track name</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='143' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='144' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='145' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='146' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for track name in search track name bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='147' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that track name</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='148' status='pass'>
+	<span class='duration right label'>0h 0m 12s+285ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by course</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='149' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='150' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='151' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='152' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for course  in search course bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='153' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that course</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='154' status='pass'>
+	<span class='duration right label'>0h 0m 17s+308ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches by topic completed</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='155' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='156' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='157' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='158' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user searches for topic completed in search topic completed bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='159' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then slp report shows all suitable search for that topic completed</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='160' status='pass'>
+	<span class='duration right label'>0h 0m 16s+708ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin searches data in search box</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='161' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='162' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='163' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='164' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When admin searches for topic completed in search topic completed bar</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='165' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then search box shows all suitable searched data</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='166' status='pass'>
+	<span class='duration right label'>0h 0m 54s+913ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin Checks Slp Report Export to Excel Functionality</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='167' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='168' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='169' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='170' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on Export to Excel button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='171' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Slp Report file is downloaded</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='172' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Match data with excel file to table</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='173' status='pass'>
+	<span class='duration right label'>0h 0m 37s+651ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Admin Checks Track Report Export to Excel Functionality</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='174' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given Admin is in Dashboard Login Page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='175' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When Admin user enters valid login id password</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='176' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And submit login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='177' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Admin click on Chart link</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='178' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on Track Report</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='179' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And click on Export to Excel button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='180' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Track Report file is downloaded</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='181' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Match data with excel file to table</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Registration</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sep 9, 2020 12:25:06 AM</td>
+										<td class='linked' test-id='1'>Registration Form Validation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@SLp</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sep 9, 2020 12:27:10 AM</td>
+										<td class='linked' test-id='62'>SLP Status</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Dashboard</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sep 9, 2020 12:28:43 AM</td>
+										<td class='linked' test-id='107'>Dashboard</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>31</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>147</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sep 9, 2020 12:25:06 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sep 9, 2020 12:34:17 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>551,730ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+						</tr>
+						<tr>
+							<td>@Registration</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@SLp</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@Dashboard</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 3,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 31,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 147,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>

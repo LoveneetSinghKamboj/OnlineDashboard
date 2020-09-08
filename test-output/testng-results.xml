@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="555848" started-at="2020-09-06T03:38:33 IST" finished-at="2020-09-06T03:47:49 IST">
+  <suite name="Suite" duration-ms="553687" started-at="2020-09-09T00:25:05 IST" finished-at="2020-09-09T00:34:19 IST">
     <groups>
       <group name="cucumber">
-        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542]" name="feature" class="com.onlineDashboardApplication.testRunner.TestRunner"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="555848" started-at="2020-09-06T03:38:33 IST" finished-at="2020-09-06T03:47:49 IST">
+    <test name="Test" duration-ms="553687" started-at="2020-09-09T00:25:05 IST" finished-at="2020-09-09T00:34:19 IST">
       <class name="com.onlineDashboardApplication.testRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542]" name="setUpClass" is-config="true" duration-ms="1099" started-at="2020-09-06T03:38:33 IST" finished-at="2020-09-06T03:38:34 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="setUpClass" is-config="true" duration-ms="526" started-at="2020-09-09T00:25:05 IST" finished-at="2020-09-09T00:25:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542]" name="feature" duration-ms="222336" started-at="2020-09-06T03:38:34 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-06T03:42:17 IST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="feature" duration-ms="124551" started-at="2020-09-09T00:25:06 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-09T00:27:10 IST">
           <params>
             <param index="0">
               <value>
@@ -22,59 +22,10 @@
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[java.lang.NullPointerException]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.NullPointerException
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-at com.onlineDashboardApplication.testRunner.TestRunner.feature(TestRunner.java:44)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:766)
-at org.testng.TestRunner.run(TestRunner.java:587)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-at org.testng.TestNG.runSuites(TestNG.java:1039)
-at org.testng.TestNG.run(TestNG.java:1007)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NullPointerException
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at com.sun.proxy.$Proxy20.getText(Unknown Source)
-at com.onlineDashboardApplication.pom.pages.Registration.message_Display(Registration.java:49)
-at com.onlineDashboardApplication.stepDefination.TestRegistration.user_is_registered_and_confirmation_page_opens_saying(TestRegistration.java:62)
-at ✽.Then user is registered and confirmation page opens saying "Thank You"(Registration.feature:11)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542]" name="feature" duration-ms="331948" started-at="2020-09-06T03:42:17 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-06T03:47:49 IST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="feature" duration-ms="92616" started-at="2020-09-09T00:27:10 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-09T00:28:43 IST">
           <params>
             <param index="0">
               <value>
@@ -85,7 +36,22 @@ at ✽.Then user is registered and confirmation page opens saying "Thank You"(Re
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@5a1c0542]" name="tearDownClass" is-config="true" duration-ms="53" started-at="2020-09-06T03:47:49 IST" finished-at="2020-09-06T03:47:49 IST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="feature" duration-ms="333983" started-at="2020-09-09T00:28:43 IST" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-09-09T00:34:17 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dashboard]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="writeExtentReport()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="writeExtentReport" is-config="true" duration-ms="419" started-at="2020-09-09T00:34:17 IST" finished-at="2020-09-09T00:34:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeExtentReport -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.onlineDashboardApplication.testRunner.TestRunner@2833cc44]" name="tearDownClass" is-config="true" duration-ms="1173" started-at="2020-09-09T00:34:17 IST" finished-at="2020-09-09T00:34:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
