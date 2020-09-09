@@ -94,6 +94,36 @@ public class Dashboard
 		@FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/div[2]/div/div[3]/div/div[2]/label/input")
 		public WebElement supervisor_search_box;
 
+		
+		
+		
+		
+		
+		 @FindBy(how = How.XPATH, using ="/html/body/div/aside/section/ul/li[5]/a")
+		  public WebElement clicks_EmployeePage;
+
+		  @FindBy(how = How.XPATH, using ="/html/body/div/aside/section/ul/li[5]/ul/li/a")
+		  public WebElement clicks_upload_empPage;
+		  
+		  
+		 
+	      
+	      @FindBy(how = How.XPATH, using ="/html/body/div/div/div/div/div[2]/div/div[3]/div/div[2]/label/input")
+		  public WebElement employee_search_box;
+		
+		
+	      public void click_employeeMenubar() {
+			  clicks_EmployeePage.click();
+			 }
+		 
+			 public void click_employee_link() {
+				 clicks_upload_empPage.click();
+			 }
+	      
+			 public void super_searchbox(String employee_search)
+			 {
+			 employee_search_box.sendKeys(employee_search);
+			 }
 	  
 	  
 	  

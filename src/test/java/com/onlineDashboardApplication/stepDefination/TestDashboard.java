@@ -569,7 +569,7 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
 			pfDashboard.upload_click();
 		}
 
-		@Then("^file is successfully unploaded for supervisor upload$")
+		@Then("^file is successfully uploaded$")
 		public void file_is_successfully_unploaded_for_supervisor_upload() throws Throwable {
 			Assert.assertEquals("Records added successfully", pfDashboard.label_msg_get());
 		}
@@ -579,9 +579,10 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
 		{
 
 			FileInputStream fs = new FileInputStream("C:\\dashboard\\dashborad08092020\\supervisors.xlsx");
+			@SuppressWarnings("resource")
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
 			XSSFSheet sheet = workbook.getSheetAt(0);
-
+             Thread.sleep(1000);
 			int data = (int) sheet.getRow(1).getCell(0).getNumericCellValue();
 			System.out.println(data);
 
@@ -646,6 +647,113 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
 		    }
 	   
 	   
+		 
+		 
+		 @Then("^verify Dashboard page$")
+			public void verify_Dashboard_page() throws Throwable {
+				String title = driver.findElement(By.xpath("/html/body/div/header/a/span[2]/b")).getText();
+				System.out.println();
+				Assert.assertEquals(title, "Dashboard");
+			}
+
+			@When("^admin clicks on Employee Page$")
+			public void admin_clicks_on_Employee_Page() throws Throwable {
+				pfDashboard.click_employeeMenubar();
+				pfDashboard.click_employee_link();
+			}
+
+			@When("choose the excelfile from location for emp upload")
+			public void choose_the_excelfile_from_location_for_emp_upload() throws Throwable {
+				Thread.sleep(2000);
+				pfDashboard.choose_file_get("C:\\dashboard\\dashborad08092020\\empList.xlsx");
+			}
+
+			@When("^admin clicks on upload button$")
+			public void admin_clicks_on_upload_button() {
+				pfDashboard.upload_click();
+			}
+
+			@Then("^Verifies the Data from excel file is imported in the table$")
+			public void verify_Data_from_excel_file_is_imported_in_the_table() throws Throwable 
+			{
+
+				FileInputStream fs = new FileInputStream("C:\\dashboard\\dashborad08092020\\empList.xlsx");
+				@SuppressWarnings("resource")
+				XSSFWorkbook workbook = new XSSFWorkbook(fs);
+				XSSFSheet sheet = workbook.getSheetAt(0);
+
+				int data = (int) sheet.getRow(1).getCell(0).getNumericCellValue();
+				System.out.println(data);
+
+				String data1 = sheet.getRow(1).getCell(1).getStringCellValue();
+				System.out.println(data1);
+
+				int cell_val = Integer.parseInt(
+						driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/div[3]/div/table/tbody/tr[1]/td[1]"))
+								.getText());
+				System.out.println(cell_val);
+				Assert.assertEquals(data, cell_val);
+
+				String cell_val1 = driver
+						.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/div[3]/div/table/tbody/tr[1]/td[2]"))
+						.getText();
+				System.out.println(cell_val1);
+				Assert.assertEquals(data1, cell_val1);
+			}
+
+			@When("^admin searches for particular data$")
+			public void admin_searches_for_particular_data() throws Throwable {
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				String val = "emp1";
+				for (int i = 0; i < val.length(); i++) {
+					char c = val.charAt(i);
+					String s = new StringBuilder().append(c).toString();
+					pfDashboard.super_searchbox(s);
+				}
+
+			}
+
+			@Then("^search box shows all suitable searched result$")
+			public void search_box_shows_all_suitable_searched_result() throws Throwable {
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				List<WebElement> getallrows = driver
+						.findElements(By.xpath("/html/body/div/div/div/div/div/div/div/div[2]/div/table/tbody/tr"));
+				for (WebElement row : getallrows) {
+					System.out.println(row.getText());
+					String rowcheck = row.getText();
+					Assert.assertEquals(rowcheck.contains("Emp1"), true);
+				}
+			}
+		 
+		 
+		 
+			@And("^Employee Data Report File is downloaded$")
+		    public void employee_data_report_file_is_downloaded() throws Throwable 
+			{
+				Thread.sleep(1000);
+		    	String downloadPath = "C:\\Users\\DELL\\Downloads";
+		    	File dir = new File(downloadPath);
+		    	boolean file=false;
+		    	Thread.sleep(1000);
+			    File[] dir_contents = dir.listFiles();
+			  	    
+			    for (int i = 0; i < dir_contents.length; i++) 
+			    {
+			        if (dir_contents[i].getName().equals("Dashboard  Capgemini (4).xlsx"))
+			        {
+			        	file=true;
+			        }  
+			    }
+			     Assert.assertTrue(file);
+		    }
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 	   
 	 
 }

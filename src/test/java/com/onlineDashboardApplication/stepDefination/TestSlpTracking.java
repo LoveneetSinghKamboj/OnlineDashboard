@@ -64,7 +64,7 @@ public void user_enters_valid_employee_id() throws InterruptedException {
 	//driver.navigate().refresh();
 	Thread.sleep(1000);
 	HighElement.highlightElement(SlpTrack.empId);
-	SlpTrack.empId("13");
+	SlpTrack.empId("14");
 }
 
 @And("^user click check status button$")

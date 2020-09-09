@@ -106,7 +106,7 @@ Scenario: Admin uploads excel sheet successfully
     When admin clicks on supervisor Page for supervisor upload
     When chooses the excelfile from location for supervisor upload
     And admin clicks on upload button for supervisor upload
-    Then file is successfully unploaded for supervisor upload
+    Then file is successfully uploaded
 
 Scenario: Verify uploaded file
 	Given Admin is in Dashboard Login Page 
@@ -123,7 +123,7 @@ Scenario: Verify uploaded file
 	When admin searches for particular data for supervisor upload
     Then search box shows all suitable searched result for supervisor upload
 	
-Scenario: Admin Checks People Focus Report Excel Functionality
+Scenario: Admin Checks Supervisor Data Report Excel Functionality
 	Given Admin is in Dashboard Login Page 
 	When Admin user enters valid login id password 
 	And submit login button 
@@ -131,4 +131,41 @@ Scenario: Admin Checks People Focus Report Excel Functionality
 	And click on Export to Excel button
 	And Supervisor Data Report File is downloaded
 	Then Match data with excel file to table 
-	
+
+Scenario:  Admin uploads empList excel sheet successfully
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	Then verify Dashboard page
+    When admin clicks on Employee Page
+	When choose the excelfile from location for emp upload
+    And admin clicks on upload button
+     Then file is successfully uploaded
+
+Scenario: Verify emplist uploaded file
+    Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	Then verify Dashboard page
+    When admin clicks on Employee Page
+    Then Verifies the Data from excel file is imported in the table
+    
+Scenario: Admin searches emp data in the search box
+    Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	Then verify Dashboard page
+	When admin clicks on Employee Page
+	When admin searches for particular data
+    Then search box shows all suitable searched result
+ 
+Scenario: Admin Checks Employee Data Report Excel Functionality
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	When admin clicks on Employee Page
+	And click on Export to Excel button
+	And Employee Data Report File is downloaded
+	Then Match data with excel file to table     
+    
+    
