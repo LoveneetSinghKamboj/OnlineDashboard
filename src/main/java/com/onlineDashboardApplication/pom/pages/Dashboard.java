@@ -14,7 +14,15 @@ public class Dashboard
 	 public Dashboard(WebDriver driver) {
 	        this.driver = driver;
 	    }
+	 
+   @FindBy(how=How.XPATH,using="//*[@id=\"example2_filter\"]/label/input")
+   public WebElement search_box_people_focus;
 	
+	@FindBy(how=How.XPATH,using="/html/body/div/aside/section/ul/li[4]/a")
+	public WebElement people_focus_link;
+	
+	@FindBy(how=How.XPATH,using="/html/body/div/aside/section/ul/li[4]/ul/li/a")
+	public WebElement report_link;
 	
 	@FindBy(how=How.XPATH,using="//*[@id=\"example2_wrapper\"]/div[1]/button")
 	public WebElement export_excel;
@@ -63,6 +71,44 @@ public class Dashboard
 	  
 	  @FindBy(how = How.XPATH, using ="/html/body/div/div/div/div/div/div/div/div[2]/div/div[4]/a[2]")
 	  public WebElement tablenext_button;
+	  
+	  
+	  
+	  
+	  
+	  @FindBy(how = How.XPATH, using = "/html/body/div/aside/section/ul/li[6]/a")
+		public WebElement clicks_SupervisorPage;
+
+		@FindBy(how = How.XPATH, using = "/html/body/div/aside/section/ul/li[6]/ul/li/a")
+		public WebElement clicks_upload_SuperPage;
+
+		@FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/div[2]/form/div[2]/div[2]/input")
+		public WebElement choose_file;
+
+		@FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/div[2]/form/div[2]/div[3]/input")
+		public WebElement upload;
+
+		@FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/div[2]/div/div[1]")
+		public WebElement label_msg;
+
+		@FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/div[2]/div/div[3]/div/div[2]/label/input")
+		public WebElement supervisor_search_box;
+
+	  
+	  
+	  
+	  public void search_Box_People_Focus(String searchText) 
+	  {
+	      search_box_people_focus.sendKeys(searchText);
+	  }
+	  
+	  public void people_Focus_Link() {
+	      people_focus_link.click();
+	  }
+	  
+	  public void report_Link() {
+	      report_link.click();
+	  }
 	  
 	  public void tablenext_button(String nextbuttonclick)
 	  {
@@ -133,7 +179,31 @@ public class Dashboard
 	
 	
 	
-	
+	  
+	  
+	  public void click_supervisorMenubar() {
+			clicks_SupervisorPage.click();
+		}
+
+		public void click_super_upload_link() {
+			clicks_upload_SuperPage.click();
+		}
+
+		public void choose_file_get(String file) {
+			choose_file.sendKeys(file);
+		}
+
+		public void upload_click() {
+			upload.click();
+		}
+
+		public String label_msg_get() {
+			return label_msg.getText();
+		}
+
+		public void supervisor_searchbox(String employee_search) {
+			supervisor_search_box.sendKeys(employee_search);
+		}
 	
 	
 	

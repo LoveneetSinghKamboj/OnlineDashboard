@@ -87,7 +87,48 @@ Scenario: Admin Checks Track Report Export to Excel Functionality
 	And click on Export to Excel button 
 	And Track Report file is downloaded 
 	Then Match data with excel file to table 
+
+Scenario: Admin Checks People Focus Report Excel Functionality
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+    And Admin click on People Focus week
+	And click on Report Link under people focus week 
+	And click on Export to Excel button
+	And Focus People Report File is downloaded
+	Then Match data with excel file to table 	
+
+Scenario: Admin uploads excel sheet successfully
+    Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	Then verify Dashboard page for supervisor upload
+    When admin clicks on supervisor Page for supervisor upload
+    When chooses the excelfile from location for supervisor upload
+    And admin clicks on upload button for supervisor upload
+    Then file is successfully unploaded for supervisor upload
+
+Scenario: Verify uploaded file
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	When admin clicks on supervisor Page for supervisor upload
+	Then Verify Data from excel file is imported in the table for supervisor upload
+
+ Scenario: Admin searches data in the search box
+    Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button
+	When admin clicks on supervisor Page for supervisor upload
+	When admin searches for particular data for supervisor upload
+    Then search box shows all suitable searched result for supervisor upload
 	
-	
-	
+Scenario: Admin Checks People Focus Report Excel Functionality
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	When admin clicks on supervisor Page for supervisor upload	
+	And click on Export to Excel button
+	And Supervisor Data Report File is downloaded
+	Then Match data with excel file to table 
 	

@@ -7,7 +7,7 @@
         <methods>
           <include name="setUpClass"/>
           <include name="writeExtentReport"/>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.onlineDashboardApplication.testRunner.TestRunner -->

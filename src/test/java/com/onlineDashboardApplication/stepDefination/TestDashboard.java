@@ -58,7 +58,7 @@ public class TestDashboard {
 
  
 
-    @When("^submit login button$")
+    @And("^submit login button$")
     public void submit_login_button() throws Throwable {
         pfDashboard.login_button.click();
     }
@@ -107,6 +107,7 @@ public class TestDashboard {
         for (int i = 0; i < val.length(); i++) {
             char c = val.charAt(i);
             String s = new StringBuilder().append(c).toString();
+            Thread.sleep(1000);
             pfDashboard.search_empid(s);
         }
     } 
@@ -136,6 +137,7 @@ public class TestDashboard {
         for (int i = 0; i < val.length(); i++) {
             char c = val.charAt(i);
             String s = new StringBuilder().append(c).toString();
+            Thread.sleep(1000);
             pfDashboard.search_empname(s);
         }
     }
@@ -204,6 +206,7 @@ public void user_searches_for_superviser_name_in_search_supervisor_name_bar() th
     for (int i = 0; i < val.length(); i++) {
         char c = val.charAt(i);
         String s = new StringBuilder().append(c).toString();
+        Thread.sleep(1000);
         pfDashboard.search_supervisorname(s);
     }
 }
@@ -304,7 +307,9 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
         for (int i = 0; i < val.length(); i++) {
             char c = val.charAt(i);
             String s = new StringBuilder().append(c).toString();
+            Thread.sleep(1000);
             pfDashboard.search_topiccompleted(s);
+            
         }
     }
 
@@ -338,6 +343,7 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
         for (int i = 0; i < val.length(); i++) {
             char c = val.charAt(i);
             String s = new StringBuilder().append(c).toString();
+            Thread.sleep(1000);
             pfDashboard.page_searchbox(s);
         }
         
@@ -477,6 +483,169 @@ public void slp_report_shows_all_suitable_search_for_that_track_name() throws Th
 	    {
 		  pfDashboard.track_Report_Link();
 	    }
-	 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  @And("^Admin click on People Focus week$")
+	    public void admin_click_on_people_focus_week() throws InterruptedException 
+	    {
+		    Thread.sleep(1000);
+		    pfDashboard.people_Focus_Link();
+	    }
+
+	   @And("^click on Report Link under people focus week$")
+	    public void click_on_report_link_under_people_focus_week() throws InterruptedException
+	    {
+		   Thread.sleep(1000);
+		   pfDashboard.report_Link();
+	    }
+	   @And("^Focus People Report File is downloaded$")
+	    public void focus_people_report_file_is_downloaded() throws InterruptedException
+	    {
+		   Thread.sleep(1000);
+	    	String downloadPath = "C:\\Users\\DELL\\Downloads";
+	    	File dir = new File(downloadPath);
+	    	boolean file=false;
+	    	Thread.sleep(1000);
+		    File[] dir_contents = dir.listFiles();
+		  	    
+		    for (int i = 0; i < dir_contents.length; i++) 
+		    {
+		        if (dir_contents[i].getName().equals("Dashboard  Capgemini (2).xlsx"))
+		        {
+		        	file=true;
+		        }  
+		    }
+		     Assert.assertTrue(file);
+	    }
+	  
+	  
+	  
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   @Then("^verify Dashboard page for supervisor upload$")
+		public void verify_Dashboard_page_for_supervisor_upload() throws Throwable {
+			String title = driver.findElement(By.xpath("/html/body/div/header/a/span[2]/b")).getText();
+			System.out.println();
+			Assert.assertEquals(title, "Dashboard");
+
+		}
+	   
+	   @When("^admin clicks on supervisor Page for supervisor upload$")
+		public void admin_clicks_on_supervisor_Page_for_supervisor_upload() {
+		   pfDashboard.click_supervisorMenubar();
+		   pfDashboard.click_super_upload_link();
+		}
+	   @When("^chooses the excelfile from location for supervisor upload$")
+		public void chooses_the_excelfile_from_location_for_supervisor_upload() throws Throwable {
+			Thread.sleep(2000);
+			pfDashboard.choose_file_get("C:\\dashboard\\dashborad08092020\\supervisors.xlsx");
+		}
+	   @When("^admin clicks on upload button for supervisor upload$")
+		public void admin_clicks_on_upload_button_for_supervisor_upload() throws Throwable {
+			pfDashboard.upload_click();
+		}
+
+		@Then("^file is successfully unploaded for supervisor upload$")
+		public void file_is_successfully_unploaded_for_supervisor_upload() throws Throwable {
+			Assert.assertEquals("Records added successfully", pfDashboard.label_msg_get());
+		}
+
+		@Then("^Verify Data from excel file is imported in the table for supervisor upload$")
+		public void verify_Data_from_excel_file_is_imported_in_the_table_for_supervisor_upload() throws Throwable 
+		{
+
+			FileInputStream fs = new FileInputStream("C:\\dashboard\\dashborad08092020\\supervisors.xlsx");
+			XSSFWorkbook workbook = new XSSFWorkbook(fs);
+			XSSFSheet sheet = workbook.getSheetAt(0);
+
+			int data = (int) sheet.getRow(1).getCell(0).getNumericCellValue();
+			System.out.println(data);
+
+			String data1 = sheet.getRow(1).getCell(1).getStringCellValue();
+			System.out.println(data1);
+
+			int cell_val = Integer.parseInt(
+					driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/div[3]/div/table/tbody/tr[1]/td[1]"))
+							.getText());
+			System.out.println(cell_val);
+			Assert.assertEquals(data, cell_val);
+
+			String cell_val1 = driver
+					.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/div[3]/div/table/tbody/tr[1]/td[2]"))
+					.getText();
+			System.out.println(cell_val1);
+			Assert.assertEquals(data1, cell_val1);
+		}
+
+		@When("^admin searches for particular data for supervisor upload$")
+		public void admin_searches_for_particular_data_for_supervisor_upload() throws Throwable {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			String val = "Ni";
+			for (int i = 0; i < val.length(); i++) {
+				char c = val.charAt(i);
+				String s = new StringBuilder().append(c).toString();
+				pfDashboard.supervisor_searchbox(s);
+			}
+
+		}
+
+		@Then("^search box shows all suitable searched result for supervisor upload$")
+		public void search_box_shows_all_suitable_searched_result_for_supervisor_upload() throws Throwable {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			List<WebElement> getallrows = driver
+					.findElements(By.xpath("/html/body/div/div/div/div/div/div/div/div[2]/div/table/tbody/tr"));
+			for (WebElement row : getallrows) {
+				System.out.println(row.getText());
+				String rowcheck = row.getText();
+				Assert.assertEquals(rowcheck.contains("Ni"), true);
+			}
+		}
+		
+		 @And("^Supervisor Data Report File is downloaded$")
+		    public void supervisor_data_report_file_is_downloaded() throws InterruptedException 
+		    {
+			    Thread.sleep(1000);
+		    	String downloadPath = "C:\\Users\\DELL\\Downloads";
+		    	File dir = new File(downloadPath);
+		    	boolean file=false;
+		    	Thread.sleep(1000);
+			    File[] dir_contents = dir.listFiles();
+			  	    
+			    for (int i = 0; i < dir_contents.length; i++) 
+			    {
+			        if (dir_contents[i].getName().equals("Dashboard  Capgemini (3).xlsx"))
+			        {
+			        	file=true;
+			        }  
+			    }
+			     Assert.assertTrue(file);
+		    }
+	   
+	   
+	   
 	 
 }
