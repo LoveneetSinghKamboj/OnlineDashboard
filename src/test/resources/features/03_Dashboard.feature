@@ -167,5 +167,16 @@ Scenario: Admin Checks Employee Data Report Excel Functionality
 	And click on Export to Excel button
 	And Employee Data Report File is downloaded
 	Then Match data with excel file to table     
-    
+   
+Scenario: Admin logins into dashboard 
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button 
+	Then Admin should be logged in into the dashboard 
+	
+
+	 
+ 
+ 
+ 
     

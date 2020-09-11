@@ -53,7 +53,7 @@ public class TestPeopleFocus {
 	public void user_select_designation_dropdown_supervisor_dropdown_f2fdone_dropdown_f2f_date()
 			throws InterruptedException {
 		pfPeople.Designation("Consultant");
-		pfPeople.Supervisor("Rohit W");
+		pfPeople.Supervisor("Sujay Rahane");
 		pfPeople.F2FDone("Yes");
 		WebElement date = driver
 				.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/form/div[1]/div[2]/div[2]/input"));
@@ -94,7 +94,7 @@ public class TestPeopleFocus {
 	}
 
 	@Then("^Alert popups message shows \"([^\"]*)\"$")
-	public void error_alert_popups_message_shows(String value) {
+	public void error_alert_popups_message_shows(String value) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 		wait.until(ExpectedConditions.alertIsPresent());
 		String alert2 = driver.switchTo().alert().getText();
@@ -102,6 +102,7 @@ public class TestPeopleFocus {
 		Assert.assertEquals(
 				"Please try to create your profile after 6 months from your registration date as this employee Id is already registered !",
 				alert2);
+		Thread.sleep(500);
 		driver.switchTo().alert().accept();
 	}
 
@@ -111,13 +112,13 @@ public class TestPeopleFocus {
 	}
 
 		@Then("^alert message showing \"([^\"]*)\"$")
-		public void alert_message_showing_desn(String strg1)
+		public void alert_message_showing_desn(String strg1) throws InterruptedException
 		{
 			String	alertMessage= driver.switchTo().alert().getText();
 			System.out.println(alertMessage);
 			Assert.assertEquals("Please select designation !",alertMessage);
-		    driver.switchTo().alert().accept();
-		
+			Thread.sleep(500);
+		    driver.switchTo().alert().accept();	
 		}
 		
 		@When("^user selects only designation$")
@@ -144,8 +145,8 @@ public class TestPeopleFocus {
 			wait.until(ExpectedConditions.alertIsPresent());
 			String alertvalue1 = driver.switchTo().alert().getText();		
 			Assert.assertEquals("Please enter valid employee Id !", alertvalue1);
+			Thread.sleep(500);
 			driver.switchTo().alert().accept();
-
 		}
 		
 		@When("^user entering invalid employeeid$")
@@ -154,13 +155,14 @@ public class TestPeopleFocus {
 			pfPeople.empID("0");
 		}
 		@Then("^error message showing \"([^\"]*)\"$")
-		public void error_message_showing(String arg4)
+		public void error_message_showing(String arg4) throws InterruptedException
 		{
 			WebDriverWait wait = new WebDriverWait(driver, 5);
 			wait.until(ExpectedConditions.alertIsPresent());
 			String alert6= driver.switchTo().alert().getText();
 			System.out.println(alert6);
 			Assert.assertEquals("Invalid employee Id !",alert6);
+			Thread.sleep(500);
 			driver.switchTo().alert().accept();
 		}
 		
@@ -186,8 +188,8 @@ public class TestPeopleFocus {
 		{
 			pfPeople.Designation("Consultant");
 			pfPeople.F2FDone("Yes");
-			WebElement date = driver
-					.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/form/div[1]/div[2]/div[2]/input"));
+			WebElement date = driver.
+					findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/form/div[1]/div[2]/div[2]/input"));
 			date.sendKeys("02/09/2020");
 			}
 		@Then("^alert popup message displaying \"([^\"]*)\"$")
@@ -206,11 +208,12 @@ public class TestPeopleFocus {
 		}
 		
 		@Then("^alert message box displaying \"([^\"]*)\"$")
-		public void alert_message_box_display(String arg1)
+		public void alert_message_box_display(String arg1) throws InterruptedException
 		{
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			String alert10 = driver.switchTo().alert().getText();
 			Assert.assertEquals("Please select f2f Done !", alert10);
+			Thread.sleep(500);
 			driver.switchTo().alert().accept();
 		}
 		
@@ -223,11 +226,12 @@ public class TestPeopleFocus {
 		}
 		
 		@Then("^alert popup message box displaying message as Please select f2f Date!$")
-		public void alert_popup_message_box_displaying()
+		public void alert_popup_message_box_displaying() throws InterruptedException
 		{
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			String alert11 = driver.switchTo().alert().getText();
 			Assert.assertEquals("Please select f2f Date !", alert11);
+			Thread.sleep(500);
 			driver.switchTo().alert().accept();
 		}
 

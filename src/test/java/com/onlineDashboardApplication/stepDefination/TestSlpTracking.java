@@ -61,10 +61,9 @@ public void pop_up_box_appears_invalid_employee_id() throws InterruptedException
 
 @When("^user enters valid employee id$")
 public void user_enters_valid_employee_id() throws InterruptedException {
-	//driver.navigate().refresh();
 	Thread.sleep(1000);
 	HighElement.highlightElement(SlpTrack.empId);
-	SlpTrack.empId("14");
+	SlpTrack.empId("13");
 }
 
 @And("^user click check status button$")
