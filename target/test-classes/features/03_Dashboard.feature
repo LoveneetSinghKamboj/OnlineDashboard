@@ -12,7 +12,13 @@ Scenario: Admin logins into dashboard with invalid credentials
 	When Admin user enters invalid login id password 
 	And submit login button 
 	Then message will be displayed Invalid credentials 
-	
+
+Scenario: To check if registered and updated data show in slp report
+	Given Admin is in Dashboard Login Page 
+	When Admin user enters valid login id password 
+	And submit login button     	 
+	Then Check data are reflect on dashboard that have register on registration page	
+		
 Scenario: Admin searches by employee id 
 	Given Admin is in Dashboard Login Page 
 	When Admin user enters valid login id password 
@@ -167,15 +173,14 @@ Scenario: Admin Checks Employee Data Report Excel Functionality
 	And click on Export to Excel button
 	And Employee Data Report File is downloaded
 	Then Match data with excel file to table     
-   
-Scenario: Admin logins into dashboard 
+	
+Scenario: Updated Courses percentage reflect in track report page
 	Given Admin is in Dashboard Login Page 
 	When Admin user enters valid login id password 
-	And submit login button 
-	Then Admin should be logged in into the dashboard 
+	And submit login button     
+	Then Table track report matches couses values from slp report 
 	
 
-	 
  
  
  

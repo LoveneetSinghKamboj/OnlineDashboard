@@ -43,7 +43,7 @@ public class TestRegistration {
 	@When("^user selects Supervisor dropdown, SLP Track dropdown$")
 	public void user_selects_Supervisor_dropdown_SLP_Track_dropdown() {
 		registration.supervisor_Dropdown("Sujay Rahane");
-		registration.slp_Track_Dropdown(4);
+		registration.slp_Track_Dropdown(1);
 	}
 
 	@When("^user click on register button$")

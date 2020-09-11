@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.onlineDashboardApplication.testRunner.TestRunner">
+      <class name="com.onlineDashboardApplication.stepDefination.abc">
         <methods>
-          <include name="setUpClass"/>
-          <include name="writeExtentReport"/>
-          <include name="feature" invocation-numbers="3"/>
-          <include name="tearDownClass"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.onlineDashboardApplication.testRunner.TestRunner -->
+      </class> <!-- com.onlineDashboardApplication.stepDefination.abc -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

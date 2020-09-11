@@ -15,6 +15,9 @@ public class Dashboard
 	        this.driver = driver;
 	    }
 	 
+   @FindBy(how=How.XPATH,using="/html/body/div/aside/section/ul/li[11]/a")
+   public WebElement LogOut_Button; 
+	 
    @FindBy(how=How.XPATH,using="//*[@id=\"example2_filter\"]/label/input")
    public WebElement search_box_people_focus;
 	
@@ -111,7 +114,11 @@ public class Dashboard
 	      @FindBy(how = How.XPATH, using ="/html/body/div/div/div/div/div[2]/div/div[3]/div/div[2]/label/input")
 		  public WebElement employee_search_box;
 		
-		
+	      public void LogOut_Button() {
+	    	  LogOut_Button.click();
+			 }
+	      
+	      
 	      public void click_employeeMenubar() {
 			  clicks_EmployeePage.click();
 			 }
@@ -234,21 +241,6 @@ public class Dashboard
 		public void supervisor_searchbox(String employee_search) {
 			supervisor_search_box.sendKeys(employee_search);
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public void chart_Link() {
 		chart_link.click();

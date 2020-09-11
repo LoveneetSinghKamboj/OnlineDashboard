@@ -14,7 +14,7 @@ import org.testng.annotations.AfterClass;
 import com.cucumber.listener.Reporter;
 
 
-@CucumberOptions(features = {"src/test/resources/features" },
+@CucumberOptions(features = {"src/test/resources/features/05_PeopleFocusDashboard.feature" },
                  glue = { "com.onlineDashboardApplication.stepDefination"},
                  plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"},
                  tags= {"@Registration,@SLp,@Dashboard,@PeopleFocusUI,@PeopleFocusDashboard"},

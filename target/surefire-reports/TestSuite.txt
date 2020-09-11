@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 783.079 s <<< FAILURE! - in TestSuite
-com.onlineDashboardApplication.testRunner.TestRunner.feature[PeopleFocusDashboard](5)  Time elapsed: 57.732 s  <<< FAILURE!
-cucumber.runtime.CucumberException: java.lang.AssertionError: expected [08/09/2020] but found [09-08-2020]
-Caused by: java.lang.AssertionError: expected [08/09/2020] but found [09-08-2020]
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 107.292 s - in TestSuite
