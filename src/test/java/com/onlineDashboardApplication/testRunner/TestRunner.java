@@ -19,7 +19,7 @@ import com.cucumber.listener.Reporter;
                  plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"},
                  tags= {"@Registration,@SLp,@Dashboard,@PeopleFocusUI,@PeopleFocusDashboard"},
                  monochrome = true,
-                 dryRun=false
+                 dryRun=true
 		) 
 
 public class TestRunner extends AbstractTestNGCucumberTests
